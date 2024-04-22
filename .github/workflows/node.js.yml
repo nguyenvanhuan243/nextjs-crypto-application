@@ -30,19 +30,19 @@ jobs:
       - run: yarn install
 
       - name: Build Docker Image
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      run: |
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
-        docker build \
-          -t nextjs_crypto_app \
-          .
-        docker tag nextjs_crypto_app:latest nguyenvanhuan243/nextjs_crypto_app:latest
-    - name: Login to Docker Hub
-      uses: docker/login-action@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Push Docker Image
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      run: |
-        docker push nguyenvanhuan243/nextjs_crypto_app:latest
+          run: |
+          docker build \
+            -t nextjs_crypto_app \
+            .
+          docker tag nextjs_crypto_app:latest nguyenvanhuan243/nextjs_crypto_app:latest
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Push Docker Image
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          docker push nguyenvanhuan243/nextjs_crypto_app:latest
