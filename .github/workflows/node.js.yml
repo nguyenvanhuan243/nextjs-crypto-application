@@ -46,3 +46,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
           docker push nguyenvanhuan243/nextjs_crypto_app:latest
+      - name: Deploy Docker Image
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          curl -X GET https://api.render.com/deploy/srv-coj5m78l5elc73diaaug?key=HTGmWEW1VGA
