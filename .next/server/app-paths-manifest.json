@@ -1,8 +1,8 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/news/page": "app/news/page.js",
   "/crypto-currencies/page": "app/crypto-currencies/page.js",
   "/exchanges/page": "app/exchanges/page.js",
+  "/news/page": "app/news/page.js",
   "/page": "app/page.js"
 }
