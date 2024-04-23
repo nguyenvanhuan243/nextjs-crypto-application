@@ -52,4 +52,4 @@ jobs:
       - name: Deploy Docker Image
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
-          curl -X GET https://api.render.com/deploy/srv-coj5m78l5elc73diaaug?key=HTGmWEW1VGA
+          curl -X GET https://api.render.com/deploy/srv-cojh870cmk4c73bra3q0?key=6yMNWuDFQv4
